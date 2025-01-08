@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
         - name: b19-backend-app
-          image: sj8688/backend-app:latest
+          image: sj8688/backend:latest
           ports:
             - containerPort: 8080
