@@ -8,14 +8,14 @@ spec:
   replicas: 2
   selector:
     matchLabels:
-      app: backend-app
+      app: backend-app  # This selector must match the label in the template
   template:
     metadata:
       labels:
-        app: backend-app
+        app: backend-app  # This label must match the selector above
     spec:
       containers:
         - name: backend-app
-          image: sj8688/backend-app
+          image: sj8688/backend-app:latest  # Ensure the image is correct
           ports:
             - containerPort: 8080
