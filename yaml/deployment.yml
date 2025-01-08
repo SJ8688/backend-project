@@ -1,21 +1,22 @@
-apiversion: apps/v1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: backend-app
   labels:
     app: backend-app
 spec:
+  replicas: 2  # Correct placement of replicas
   selector:
     matchLabels:
       app: backend-app
-    replicas: 2
-    template:
-      metadata:
-        labels:
-          app: backend-app
-      spec:
-        conatainer:
-          - name: backend-app
-            image: sj8688/backend-app
-            ports:
-              - containerPort: 8080
+  template:
+    metadata:
+      labels:
+        app: backend-app
+    spec:
+      containers:
+        - name: backend-app
+          image: sj8688/backend-app
+          ports:
+            - containerPort: 8080
+
