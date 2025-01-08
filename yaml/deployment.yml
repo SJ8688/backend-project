@@ -5,7 +5,7 @@ metadata:
   labels:
     app: backend-app
 spec:
-  replicas: 2  # Correct placement of replicas
+  replicas: 2
   selector:
     matchLabels:
       app: backend-app
@@ -19,4 +19,3 @@ spec:
           image: sj8688/backend-app
           ports:
             - containerPort: 8080
-
