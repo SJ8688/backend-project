@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: backend-app
+  name: b19-backend-app
   labels:
-    app: backend-app
+    app: b19-backend-app
 spec:
   selector:
     matchLabels:
-      app: backend-app
-    replicas: 2
-    template:
-      metadata:
-        labels:
-          app: backend-app
-      spec:
-        conatainer:
-          - name: backend-app
-            image: sj8688/backend-app
-            ports:
-              - containerPort: 8080
+      app: b19-backend-app
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: b19-backend-app
+    spec:
+      containers:
+        - name: b19-backend-app
+          image: sj8688/backend-app:latest
+          ports:
+            - containerPort: 8080
